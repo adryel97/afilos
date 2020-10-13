@@ -1,0 +1,6 @@
+Produto deve conter
+    - Nome
+    - Marca
+    - Preço
+    - Modelo
+    - Descrição
