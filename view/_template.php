@@ -14,14 +14,18 @@
     <script src="js/all.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body class="bg-gray-1">
     <!--- cabeçalho --->
-    <header class="header bg-dark d-flex">
-        <div class="text-white w-50">
-            <i class="fas fa-bars fa-lg "></i>
-        </div>
-        <div class="text-white w-50 text-right">
-            <span>SAIR </span> <i class="fas fa-sign-in-alt fa-lg ml-1"></i>
+    <header class="header bg-dark">
+        <div class="container-fluid d-flex">
+            <div class="text-white w-50">
+                <span class="btn__bar">
+                    <i class="fas fa-bars fa-lg "></i>
+                </span>
+            </div>
+            <div class="text-white w-50 text-right">
+                <span>SAIR </span> <i class="fas fa-sign-in-alt fa-lg ml-1"></i>
+            </div>
         </div>
     </header>
     <!--- menu --->
@@ -76,11 +80,21 @@
             </div>
         </div>
     </nav>
+
+      <!--- breadcrumb --->
+    <div class="nav-bread">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb rounded-0 pt-1 pb-1 bg-gray-1">
+                <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+            </ol>
+        </nav>
+    </div>
     <!--- conteudo --->
     <main class="content">
         <div class="container-fluid">
-            <h3>Conteudo</h3>
+            <h1>Conteudo</h1>
         </div>
     </main>
+    <script src="js/appMenu.js"></script>
 </body>
 </html>
