@@ -1,0 +1,26 @@
+{
+  "name": "afilos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "sass-min": "node-sass --watch css/bootstrap.scss css/bootstrap.min.css --output-style compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adryel97/afilos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adryel97/afilos/issues"
+  },
+  "homepage": "https://github.com/adryel97/afilos#readme",
+  "dependencies": {
+    "bootstrap": "^4.5.3"
+  }
+}

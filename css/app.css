@@ -1,0 +1,54 @@
+@media screen and (min-width: 768px) {
+    .menu{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100px;
+        height: 100%;
+    }
+
+    .header{
+        width: 100%;
+        padding-left: 120px;
+        padding-right: 20px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+
+    }
+
+    .content{
+        margin-left: 100px;
+    }
+}
+
+@media screen and (min-width: 992px){
+
+}
+
+/* desktop grande*/
+@media screen and (min-width: 1200px) {
+	
+}
+
+@media screen and (max-width: 767px){
+
+}
+
+/* mobile small*/
+@media screen and (max-width: 564px){
+
+}
+
+/* desktop médio*/
+@media screen and (min-width: 992px) and (max-width: 1199px){
+}
+
+/* tablet */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/* mobile small*/
+@media screen and (min-width: 565px) and (max-width: 767px) {
+
+}
