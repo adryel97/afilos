@@ -89,4 +89,13 @@ $theme-colors: map-merge(
   $theme-colors
 );
 
+
+$input-bg:                              $white !default;
+$input-disabled-bg:                     $gray-200 !default;
+
+$input-color:                           $gray-700 !default;
+$input-border-color:                    $gray-300 !default;
+
+$input-placeholder-color:               $gray-300 !default;
+
 @import '../node_modules/bootstrap/scss/bootstrap.scss';

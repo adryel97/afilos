@@ -85,14 +85,14 @@
     <div class="nav-bread">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb rounded-0 pt-1 pb-1 bg-gray-1">
-                <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                <li class="breadcrumb-item active" aria-current="page">dashboard</li>
             </ol>
         </nav>
     </div>
     <!--- conteudo --->
     <main class="content">
         <div class="container-fluid">
-            <h1>Conteudo</h1>
+           <?php require "view/estoque.php";?>
         </div>
     </main>
     <script src="js/appMenu.js"></script>
