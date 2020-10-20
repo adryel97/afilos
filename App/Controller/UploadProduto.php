@@ -13,11 +13,6 @@ class UploadProduto
 
     public function insertImagem($imagem)
     {
-        if(!empty($imagem)){
-            $this->uploadImagem($imagem);
-            return true;
-        } else {
-            return false;
-        }
+        return $this->uploadImagem($imagem);
     }
 }

@@ -11,6 +11,7 @@ $router->namespace("App\Controller");
 
 $router->group("");
 $router->get('/estoque', 'Produto:estoque', 'produto.estoque');
+$router->post('/estoque/teste', 'Produto:criarProduto', 'produto.criar');
 
 //inicializa as rotas
 $router->dispatch();

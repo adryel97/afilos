@@ -75,7 +75,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="post" enctype="multipart/form-data">
+        <form method="post" action="<?= $router->route("produto.criar")?> " enctype="multipart/form-data">
             <div class="form-group">
               <label>Nome</label>
               <input type="text" class="form-control" placeholder="Nome do produto">
