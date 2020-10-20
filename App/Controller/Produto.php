@@ -32,6 +32,15 @@ class Produto
 
     public function criarProduto()
     {
+        $nome = "Teste";
+        $valor = "200";
+        $modelo = "Teste";
+        $marca = "Teste"; 
+        $descricao = "Teste";
         
+        if(!empty($_FILES['imagem'])){
+            $caminhoImagem = $this->uploadProduto->uploadImagem($_FILES['imagem']);
+            $this->produto->insertProduto($nome, $valor, $modelo, $marca, $descricao, $caminhoImagem);
+        }
     }
 }
