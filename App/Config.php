@@ -1,4 +1,5 @@
 <?php 
+define('ROOT', 'http://afilos.local');
 
 define("DATA_LAYER_CONFIG", [
     "driver" => "mysql",
@@ -14,3 +15,17 @@ define("DATA_LAYER_CONFIG", [
         PDO::ATTR_CASE => PDO::CASE_NATURAL
     ]
 ]);
+
+function url(string $uri = null): string
+{
+    if ($uri) {
+        return ROOT . "/{$uri}";
+    }
+
+    return ROOT;
+}
+
+function messege(string $messege, string $type): string
+{
+    return "<div class=\"messege {$type}\">{$messege}</div>";
+}

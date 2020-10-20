@@ -37,6 +37,10 @@ class ComposerStaticInit9636ef260cc0cf46d5e40dc54428f969
             'CoffeeCode\\DataLayer\\' => 21,
             'Cocur\\Slugify\\' => 14,
         ),
+        'A' => 
+        array (
+            'App\\' => 4,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -79,6 +83,10 @@ class ComposerStaticInit9636ef260cc0cf46d5e40dc54428f969
         'Cocur\\Slugify\\' => 
         array (
             0 => __DIR__ . '/..' . '/cocur/slugify/src',
+        ),
+        'App\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/App',
         ),
     );
 

@@ -1,3 +1,17 @@
+
+<?php  $this->layout("_template", ['title' => 'Estoque']); ?>
+
+<?php 
+  $this->start("breadcrumb");
+?>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb rounded-0 pt-1 pb-1 bg-gray-1">
+                <li class="breadcrumb-item active" aria-current="page">estoque</li>
+            </ol>
+        </nav>
+<?php 
+  $this->end("breadcrumb");
+?>  
 <h1>Estoque</h1>
 <p class="text-gray-4 mb-2 mt-4"><b>cadastre um novo produto:</b></p>
 <div class="d-flex">
@@ -12,10 +26,10 @@
     <table class="table mt-5 rounded">
         <thead class="thead-dark">
             <tr>
-            <th scope="col">Nome</th>
-            <th scope="col">Marca</th>
-            <th scope="col">Valor</th>
-            <th scope="col">Ação</th>
+              <th scope="col">Nome</th>
+              <th scope="col">Marca</th>
+              <th scope="col">Valor</th>
+              <th scope="col">Ação</th>
             </tr>
         </thead>
         <tbody>
@@ -61,7 +75,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="">
+        <form method="post" enctype="multipart/form-data">
             <div class="form-group">
               <label>Nome</label>
               <input type="text" class="form-control" placeholder="Nome do produto">
@@ -87,11 +101,11 @@
             <div class="form-group">
                 <label class="btn btn-lg btn-dark w-100 text-uppercase">
                     <b>Selecione a foto</b> <i class="ml-2 fas fa-upload"></i>
-                    <input type="file" class="d-none">
+                    <input type="file" name="imagem" id="imagem" class="d-none">
                 </label>
             </div>
             <div class="form-group">
-                <button class="btn btn-success">Salvar</button>
+                <button class="btn btn-success" type="submit">Salvar</button>
                 <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>
             </div>
         </form>

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/all.min.css">
     
-    <title>Afilos</title>
+    <title>Afilos - <?= $title ?></title>
 
     <script src="lib/jquery/jquery-3.5.1.min.js"></script>
     <script src="lib/popper/popper.min.js"></script>
@@ -51,7 +51,7 @@
         </div>
         <div class="d-flex flex-column mt-5 align-items-center justify-content-center pl-3 pr-3">
             <div class="p-1 text-center ">
-                <a href="#" class="text-decoration-none text-gray-5">
+                <a href="<?= url('estoque') ?>" class="text-decoration-none text-gray-5">
                     <div class="w-100 p-3 rounded bg-gray-1 text-center">
                         <i class="fas fa-box-open fa-lg"></i>
                     </div>
@@ -83,18 +83,27 @@
 
       <!--- breadcrumb --->
     <div class="nav-bread">
+    <?php 
+            if ($this->section("breadcrumb")): 
+                echo $this->section("breadcrumb");
+            else:
+        ?>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb rounded-0 pt-1 pb-1 bg-gray-1">
                 <li class="breadcrumb-item active" aria-current="page">dashboard</li>
             </ol>
         </nav>
+        <?php
+          endif;
+        ?>
     </div>
     <!--- conteudo --->
     <main class="content">
         <div class="container-fluid">
-           <?php require "view/estoque.php";?>
+            <?= $this->section("content");?>
         </div>
     </main>
     <script src="js/appMenu.js"></script>
+    <?= $this->section("js");?>
 </body>
 </html>
