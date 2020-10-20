@@ -32,15 +32,20 @@ class Produto
 
     public function criarProduto()
     {
-        $nome = "Teste";
-        $valor = "200";
-        $modelo = "Teste";
-        $marca = "Teste"; 
-        $descricao = "Teste";
-        
-        if(!empty($_FILES['imagem'])){
-            $caminhoImagem = $this->uploadProduto->uploadImagem($_FILES['imagem']);
-            $this->produto->insertProduto($nome, $valor, $modelo, $marca, $descricao, $caminhoImagem);
+        $nome = $_POST['nome'];
+        $valor = $_POST['valor'];
+        $marca = $_POST['marca'];
+        $modelo = $_POST['modelo'];
+        $descricao = $_POST['descricao'];
+
+        $caminhoImagem = $_FILES['imagem'];
+
+        if(!empty($caminhoImagem)){
+            //$caminhoImagem = $this->uploadProduto->uploadImagem($caminhoImagem);
+            //$this->produto->insertProduto($nome, $valor, $modelo, $marca, $descricao, $caminhoImagem);
+            echo true;
+        } else {
+            echo false;
         }
     }
 }

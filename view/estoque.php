@@ -16,7 +16,7 @@
 <p class="text-gray-4 mb-2 mt-4"><b>cadastre um novo produto:</b></p>
 <div class="d-flex">
     <button class="btn btn-primary text-uppercase">
-        <b>cadastro com Manual</b>
+        <b>cadastro com assitente</b>
     </button>
     <button class="btn btn-outline-secondary  text-uppercase ml-2" data-toggle="modal" data-target="#cadastroManual">
         <b>cadastro manual</b>
@@ -42,24 +42,6 @@
                     <button class="btn btn-sm btn-danger">Excluir</button>
                 </td>
             </tr>
-            <tr>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>R$ 300,00</td>
-                <td>
-                    <button class="btn btn-sm btn-warning">Editar</button>
-                    <button class="btn btn-sm btn-danger">Excluir</button>
-                </td>
-            </tr>
-            <tr>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>R$ 300,00</td>
-                <td>
-                    <button class="btn btn-sm btn-warning">Editar</button>
-                    <button class="btn btn-sm btn-danger">Excluir</button>
-                </td>
-            </tr>
         </tbody>
     </table>
 </div>
@@ -75,27 +57,27 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="post" action="<?= $router->route("produto.criar")?> " enctype="multipart/form-data">
+        <form id="cadastro__manual" method="post" action="<?= $router->route("produto.criar")?> " enctype="multipart/form-data">
             <div class="form-group">
               <label>Nome</label>
-              <input type="text" class="form-control" placeholder="Nome do produto">
+              <input type="text" name="nome" class="form-control" placeholder="Nome do produto">
             </div>
             <div class="form-group">
               <label>Marca</label>
-              <input type="text" class="form-control" placeholder="Marca do produto">
+              <input type="text" name="marca" class="form-control" placeholder="Marca do produto">
             </div>
             <div class="form-group">
               <label>Modelo</label>
-              <input type="text" class="form-control" placeholder="Modelo do produto">
+              <input type="text" name="modelo" class="form-control" placeholder="Modelo do produto">
             </div>
             <div class="form-group">
               <label>Valor</label>
-              <input type="text" class="form-control" placeholder="Valor do produto">
+              <input type="text" name="valor" class="form-control" placeholder="Valor do produto">
               <small class="text-gray-4">Não obrigatório</small>
             </div>
             <div class="form-group">
               <label for="">Descrição</label>
-              <textarea class="form-control" rows="3"></textarea>
+              <textarea name="descricao" class="form-control" rows="3"></textarea>
               <small class="text-gray-4">Não obrigatório</small>
             </div>
             <div class="form-group">
@@ -113,3 +95,6 @@
     </div>
   </div>
 </div>
+<?php $this->start("js"); ?>
+  <script src="<?=url()?>/js/appProduto.js"></script>
+<?php $this->end() ?>
