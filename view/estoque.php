@@ -32,16 +32,14 @@
               <th class="border-0 text-white" scope="col">Ação</th>
             </tr>
         </thead>
-        <tbody>
-            <tr class="border-0">
-                <td class="border-0">Mark</td>
-                <td class="border-0">Otto</td>
-                <td class="border-0">R$ 300,00</td>
-                <td class="border-0">
-                    <button class="btn btn-sm btn-warning">Editar</button>
-                    <button class="btn btn-sm btn-danger">Excluir</button>
-                </td>
-            </tr>
+        <tbody id="load__tbl">
+          <?php 
+              if(!empty($produtos)):
+                  foreach ($produtos as $produto):
+                      $this->insert("fragmento/fragEstoque", ["produto" => $produto] );
+                  endforeach;
+              endif;
+          ?>
         </tbody>
     </table>
 </div>

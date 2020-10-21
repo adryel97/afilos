@@ -1,7 +1,6 @@
 <?php 
 require "vendor/autoload.php"; 
 
-
 use CoffeeCode\Router\Router;
 
 $router = new Router(ROOT);
@@ -11,7 +10,7 @@ $router->namespace("App\Controller");
 
 $router->group("");
 $router->get('/estoque', 'Produto:estoque', 'produto.estoque');
-$router->post('/estoque/teste', 'Produto:criarProduto', 'produto.criar');
+$router->post('/estoque/criar', 'Produto:criarProduto', 'produto.criar');
 
 //inicializa as rotas
 $router->dispatch();

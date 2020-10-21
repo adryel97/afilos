@@ -3,6 +3,7 @@ function cadastrarProduto(url, formData, inputs, modalCadastro, fileClean)
 {
     var srcClean = $('#output_image');
     var fileClean = $('#imagem');
+    var tbl = $('#load__tbl'); 
 
     $.ajax({
         type: "POST",
@@ -10,8 +11,20 @@ function cadastrarProduto(url, formData, inputs, modalCadastro, fileClean)
         data: formData,
         processData: false,
         contentType: false,
-        success: function (data) {
-            if(data == 1){
+        success: function (callback) {
+
+            var datProduto = JSON.parse(callback);
+            if (datProduto.produto) {
+                tbl.prepend(datProduto.produto);
+            }
+
+            if(callback == 0){
+                Swal.fire({
+                    icon: 'error',
+                    title: '<h3>Ops! <span class="text-danger ml-3"> :( <span><h3>',
+                    html: '<p class="mb-1">Preencha os campos corretamente.</p> <p>Verifique se a imagem é formato <b>PNG, JPG, GIF, JPEG<b><p>'
+                })
+            } else {
                 modalCadastro.modal('hide');
                 Swal.fire({
                     icon: 'success',
@@ -19,12 +32,6 @@ function cadastrarProduto(url, formData, inputs, modalCadastro, fileClean)
                 })
                 srcClean.attr('src', '');
                 fileClean.val('');
-            } else {
-                Swal.fire({
-                    icon: 'error',
-                    title: '<h3>Ops! <span class="text-danger ml-3"> :( <span><h3>',
-                    html: '<p class="mb-1">Preencha os campos corretamente.</p> <p>Verifique se a imagem é formato <b>PNG, JPG, GIF, JPEG<b><p>'
-                })
             }
         },
         complete: function () {

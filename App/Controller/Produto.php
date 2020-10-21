@@ -17,17 +17,21 @@ class Produto
      */
     public function __construct($router)
     {
-        $this->view = new Engine('view', 'php');
+        $this->view = new Engine(__DIR__ . '/../../view', 'php');
+        $this->view->addData(["router" => $router]);
+
         $this->produto = new ProdutoModel();
         $this->uploadProduto = new UploadProduto();
-
-        $this->view->addData(["router" => $router]);
+       
         $this->router = $router;
     }
 
     public function estoque()
     {
-        echo $this->view->render('estoque');
+        $produtos = $this->produto->find()->fetch(true);
+        echo $this->view->render('estoque', [
+            "produtos" => $produtos
+        ]);
     }
 
     public function criarProduto()
@@ -40,6 +44,7 @@ class Produto
 
         $files = $_FILES;
 
+        
         if(!empty($files['imagem'])){
             $file = $files['imagem'];
 
@@ -48,7 +53,21 @@ class Produto
             } else{
                 $caminhoImagem = $this->uploadProduto->uploadImagem($file);
                 $this->produto->insertProduto($nome, ConfigFormatos::formataMoeda($valor), $modelo, $marca, $descricao, $caminhoImagem);
-                echo 1;
+                
+                $produto = [
+                        "nome_produto"      => $nome,
+                        "valor_produto"     => $valor,
+                        "marca_produto"     => $marca,
+                        "modelo_produto"    => $modelo,
+                        "descricao_produto" => $descricao
+                ];
+
+                $objProduto = json_decode (json_encode ($produto), FALSE);
+                $callback['produto'] = $this->view->render("fragmento/fragEstoque", [
+                    "produto" => $objProduto
+                ]);
+                    
+                echo json_encode($callback);
             }
         }
     }
