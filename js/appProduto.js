@@ -1,5 +1,8 @@
 function cadastrarProduto(url, formData, inputs, modalCadastro, fileClean)
 {
+    var srcClean = $('#output_image');
+    var fileClean = $('#imagem');
+
     $.ajax({
         type: "POST",
         url: url,
@@ -7,16 +10,19 @@ function cadastrarProduto(url, formData, inputs, modalCadastro, fileClean)
         processData: false,
         contentType: false,
         success: function (data) {
-            if(data == true){
+            if(data == 1){
                 modalCadastro.modal('hide');
                 Swal.fire({
                     icon: 'success',
                     title: 'Produto cadastrado com sucesso'
                 })
+                srcClean.attr('src', '');
+                fileClean.val('');
             } else {
                 Swal.fire({
                     icon: 'error',
-                    title: 'Ops preencha os campos corretamente'
+                    title: '<h3>Ops! <span class="text-danger ml-3"> :( <span><h3>',
+                    html: '<p class="mb-1">Preencha os campos corretamente.</p> <p>Verifique se a imagem é formato <b>PNG, JPG, GIF, JPEG<b><p>'
                 })
             }
         },
@@ -40,7 +46,7 @@ $('#cadastro__manual').submit(function (e)
     cadastrarProduto(url, formData, inputs, modalCadastro, fileClean);
 });
 
-function preview_image(event) 
+function previewImagem(event) 
 {
     var reader = new FileReader();
     reader.onload = function()

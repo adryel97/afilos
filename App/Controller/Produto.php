@@ -38,14 +38,18 @@ class Produto
         $modelo = $_POST['modelo'];
         $descricao = $_POST['descricao'];
 
-        $caminhoImagem = $_FILES['imagem'];
+        $files = $_FILES;
 
-        if(!empty($caminhoImagem)){
-            $caminhoImagem = $this->uploadProduto->uploadImagem($caminhoImagem);
-            $this->produto->insertProduto($nome, $valor, $modelo, $marca, $descricao, $caminhoImagem);
-            echo true;
-        } else {
-            echo false;
+        if(!empty($files['imagem'])){
+            $file = $files['imagem'];
+
+            if(empty($file['type'])){
+                echo 0;
+            } else{
+                $caminhoImagem = $this->uploadProduto->uploadImagem($file);
+                $this->produto->insertProduto($nome, ConfigFormatos::formataMoeda($valor), $modelo, $marca, $descricao, $caminhoImagem);
+                echo 1;
+            }
         }
     }
 }

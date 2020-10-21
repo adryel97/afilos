@@ -14,6 +14,7 @@
     <script src="lib/popper/popper.min.js"></script>
     <script src="js/all.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="lib/mask/jquery.mask.min.js"></script>
     <script src="node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
     
 </head>
@@ -107,6 +108,7 @@
         </div>
     </main>
     <script src="js/appMenu.js"></script>
+    <script src="js/config.js"></script>
     <?= $this->section("js");?>
 </body>
 </html>

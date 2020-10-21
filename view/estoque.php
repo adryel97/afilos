@@ -60,19 +60,19 @@
         <form id="cadastro__manual" method="post" action="<?= $router->route("produto.criar")?> " enctype="multipart/form-data">
             <div class="form-group">
               <label>Nome</label>
-              <input type="text" name="nome" class="form-control" placeholder="Nome do produto">
+              <input type="text" id="nome" name="nome" class="form-control" placeholder="Nome do produto">
             </div>
             <div class="form-group">
               <label>Marca</label>
-              <input type="text" name="marca" class="form-control" placeholder="Marca do produto">
+              <input type="text" id="marca" name="marca" class="form-control" placeholder="Marca do produto">
             </div>
             <div class="form-group">
               <label>Modelo</label>
-              <input type="text" name="modelo" class="form-control" placeholder="Modelo do produto">
+              <input type="text" id="modelo" name="modelo" class="form-control" placeholder="Modelo do produto">
             </div>
             <div class="form-group">
               <label>Valor</label>
-              <input type="text" name="valor" class="form-control" placeholder="Valor do produto">
+              <input type="text" id="valor" name="valor" class="form-control" placeholder="Valor do produto">
               <small class="text-gray-4">Não obrigatório</small>
             </div>
             <div class="form-group">
@@ -83,7 +83,7 @@
             <div class="form-group" data-upload-id="myUniqueUploadId">
                 <label class="btn btn-lg btn-dark w-100 text-uppercase">
                     <b>Selecione uma foto</b> <i class="ml-2 fas fa-upload"></i>
-                    <input type="file" name="imagem" id="imagem" class="d-none" onchange="preview_image(event)">
+                    <input type="file" name="imagem" id="imagem" class="d-none" onchange="previewImagem(event)">
                 </label>
             </div>
             <div class="mt-2 mb-4">
