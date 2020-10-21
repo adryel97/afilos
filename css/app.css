@@ -4,6 +4,26 @@
 .bg-primary-gr{
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FE75FF 95.31%), #C56BE8;
 }
+
+/* width */
+ #scroll--menu::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  #scroll--menu::-webkit-scrollbar-track {
+    background: transparent; 
+  }
+   
+  /* Handle */
+  #scroll--menu::-webkit-scrollbar-thumb {
+    background: #bd2ef5; 
+  }
+  
+  /* Handle on hover */
+  #scroll--menu::-webkit-scrollbar-thumb:hover {
+    background: #bd2ef5; 
+  }
 @media screen and (min-width: 768px) {
     .menu{
         position: fixed;

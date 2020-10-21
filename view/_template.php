@@ -34,8 +34,8 @@
     </header>
     <!--- menu --->
     <nav class="menu bg-primary-gr pt-2 pb-2">
-        <figure class="d-flex justify-content-center align-items-center m-0 border-bottom pb-1">
-            <img src="img/logo-afilos.png" width="50px">
+        <figure class="d-flex justify-content-center align-items-center m-0 border-bottom border-white pb-1">
+            <img src="img/logoA-branco.png" width="60px" style="opacity: 0.5;">
         </figure>
         <div class="text-center mb-5 mt-5">
             <div>
@@ -43,44 +43,46 @@
             </div>
             <small class="text-white">nome usuario</small>
         </div>
-        <div class="d-flex flex-column mb-5 align-items-center justify-content-center pl-3 pr-3">
-            <div class="p-1 text-center text-white">
-                <a href="#" class="text-decoration-none text-white">
-                    <div class="w-100 p-3 rounded  text-center">
-                        <i class="fas fa-home fa-lg"></i>
-                    </div>
-                    <small>dasboard</small>
-                </a>
+        <div style="height: 55vh; overflow-y: scroll;" id="scroll--menu">
+            <div class="d-flex flex-column mb-5 align-items-center justify-content-center pl-3 pr-3">
+                <div class="p-1 text-center text-white">
+                    <a href="#" class="text-decoration-none text-white">
+                        <div class="w-100 p-3 rounded  text-center">
+                            <i class="fas fa-home fa-lg"></i>
+                        </div>
+                        <small>dasboard</small>
+                    </a>
+                </div>
             </div>
-        </div>
-        <div class="d-flex flex-column mt-5 align-items-center justify-content-center pl-3 pr-3">
-            <div class="p-1 text-center ">
-                <a href="<?= url('estoque') ?>" class="text-decoration-none text-white">
-                    <div class="w-100 p-3 rounded  text-center">
-                        <i class="fas fa-box-open fa-lg"></i>
-                    </div>
-                    <small>estoque</small>
-                </a>
+            <div class="d-flex flex-column mt-5 align-items-center justify-content-center pl-3 pr-3">
+                <div class="p-1 text-center ">
+                    <a href="<?= url('estoque') ?>" class="text-decoration-none text-white">
+                        <div class="w-100 p-3 rounded  text-center">
+                            <i class="fas fa-box-open fa-lg"></i>
+                        </div>
+                        <small>estoque</small>
+                    </a>
+                </div>
             </div>
-        </div>
-        <div class="d-flex flex-column mt-5 align-items-center justify-content-center pl-3 pr-3">
-            <div class="p-1 text-center text-white">
-                <a href="#" class="text-decoration-none text-white">
-                    <div class="w-100 p-3 rounded  text-center">
-                    <i class="fas fa-dolly fa-lg"></i>
-                    </div>
-                    <small>entrada</small>
-                </a>
+            <div class="d-flex flex-column mt-5 align-items-center justify-content-center pl-3 pr-3">
+                <div class="p-1 text-center text-white">
+                    <a href="#" class="text-decoration-none text-white">
+                        <div class="w-100 p-3 rounded  text-center">
+                        <i class="fas fa-dolly fa-lg"></i>
+                        </div>
+                        <small>entrada</small>
+                    </a>
+                </div>
             </div>
-        </div>
-        <div class="d-flex flex-column mt-5 align-items-center justify-content-center pl-3 pr-3">
-            <div class="p-1 text-center text-white">
-                <a href="#" class="text-decoration-none text-white">
-                    <div class="w-100 p-3 rounded  text-center">
-                        <i class="fas fa-truck-loading fa-lg"></i>
-                    </div>
-                    <small>saída</small>
-                </a>
+            <div class="d-flex flex-column mt-5 align-items-center justify-content-center pl-3 pr-3">
+                <div class="p-1 text-center text-white">
+                    <a href="#" class="text-decoration-none text-white">
+                        <div class="w-100 p-3 rounded  text-center">
+                            <i class="fas fa-truck-loading fa-lg"></i>
+                        </div>
+                        <small>saída</small>
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
