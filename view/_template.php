@@ -6,13 +6,16 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/all.min.css">
-    
+    <link rel="stylesheet" href="node_modules/@sweetalert2/theme-bootstrap-4/bootstrap-4.min.css">
+
     <title>Afilos - <?= $title ?></title>
 
     <script src="lib/jquery/jquery-3.5.1.min.js"></script>
     <script src="lib/popper/popper.min.js"></script>
     <script src="js/all.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+    
 </head>
 <body class="bg-gray-1">
     <!--- cabeçalho --->

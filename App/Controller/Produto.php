@@ -41,8 +41,8 @@ class Produto
         $caminhoImagem = $_FILES['imagem'];
 
         if(!empty($caminhoImagem)){
-            //$caminhoImagem = $this->uploadProduto->uploadImagem($caminhoImagem);
-            //$this->produto->insertProduto($nome, $valor, $modelo, $marca, $descricao, $caminhoImagem);
+            $caminhoImagem = $this->uploadProduto->uploadImagem($caminhoImagem);
+            $this->produto->insertProduto($nome, $valor, $modelo, $marca, $descricao, $caminhoImagem);
             echo true;
         } else {
             echo false;

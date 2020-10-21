@@ -80,15 +80,18 @@
               <textarea name="descricao" class="form-control" rows="3"></textarea>
               <small class="text-gray-4">Não obrigatório</small>
             </div>
-            <div class="form-group">
+            <div class="form-group" data-upload-id="myUniqueUploadId">
                 <label class="btn btn-lg btn-dark w-100 text-uppercase">
-                    <b>Selecione a foto</b> <i class="ml-2 fas fa-upload"></i>
-                    <input type="file" name="imagem" id="imagem" class="d-none">
+                    <b>Selecione uma foto</b> <i class="ml-2 fas fa-upload"></i>
+                    <input type="file" name="imagem" id="imagem" class="d-none" onchange="preview_image(event)">
                 </label>
+            </div>
+            <div class="mt-2 mb-4">
+              <img id="output_image" style="max-width: 100%;"/>
             </div>
             <div class="form-group">
                 <button class="btn btn-success" type="submit">Salvar</button>
-                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-outline-secondary" id="cancelar" data-dismiss="modal">Cancelar</button>
             </div>
         </form>
       </div>
