@@ -1,3 +1,4 @@
+//cadastra o produto
 function cadastrarProduto(url, formData, inputs, modalCadastro, fileClean)
 {
     var srcClean = $('#output_image');
@@ -33,6 +34,7 @@ function cadastrarProduto(url, formData, inputs, modalCadastro, fileClean)
     });
 }
 
+//ao clicar no cadastro manual
 $('#cadastro__manual').submit(function (e)
 { 
     e.preventDefault();
@@ -46,6 +48,8 @@ $('#cadastro__manual').submit(function (e)
     cadastrarProduto(url, formData, inputs, modalCadastro, fileClean);
 });
 
+
+//preview da imagem
 function previewImagem(event) 
 {
     var reader = new FileReader();
@@ -57,7 +61,9 @@ function previewImagem(event)
     reader.readAsDataURL(event.target.files[0]);
 }
 
-$('#cancelar').click(function () { 
+//ao clicar em cancelar limpa todoas as informações
+$('#cancelar').click(function ()
+{ 
     var srcClean = $('#output_image');
     var fileClean = $('#imagem');
     var inputsClean = $('.form-control');

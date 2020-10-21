@@ -32,10 +32,10 @@ class Produto
 
     public function criarProduto()
     {
-        $nome = $_POST['nome'];
-        $valor = $_POST['valor'];
-        $marca = $_POST['marca'];
-        $modelo = $_POST['modelo'];
+        $nome      = $_POST['nome'];
+        $valor     = $_POST['valor'];
+        $marca     = $_POST['marca'];
+        $modelo    = $_POST['modelo'];
         $descricao = $_POST['descricao'];
 
         $files = $_FILES;
