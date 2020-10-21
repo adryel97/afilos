@@ -1,6 +1,9 @@
 .btn__bar{
     cursor: pointer;
 }
+.bg-primary-gr{
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FE75FF 95.31%), #C56BE8;
+}
 @media screen and (min-width: 768px) {
     .menu{
         position: fixed;

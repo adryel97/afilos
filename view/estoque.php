@@ -5,8 +5,8 @@
   $this->start("breadcrumb");
 ?>
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb rounded-0 pt-1 pb-1 bg-gray-1">
-                <li class="breadcrumb-item active" aria-current="page">estoque</li>
+            <ol class="breadcrumb rounded-0 pt-1 pb-1 bg-white">
+                <li class="breadcrumb-item text-azul-primary active" aria-current="page">estoque</li>
             </ol>
         </nav>
 <?php 
@@ -15,7 +15,7 @@
 <h1>Estoque</h1>
 <p class="text-gray-4 mb-2 mt-4"><b>cadastre um novo produto:</b></p>
 <div class="d-flex">
-    <button class="btn btn-primary text-uppercase">
+    <button class="btn btn-azul-primary text-uppercase">
         <b>cadastro com assitente</b>
     </button>
     <button class="btn btn-outline-secondary  text-uppercase ml-2" data-toggle="modal" data-target="#cadastroManual">
@@ -24,20 +24,20 @@
 </div>
 <div>
     <table class="table mt-5 rounded">
-        <thead class="thead-dark">
-            <tr>
-              <th scope="col">Nome</th>
-              <th scope="col">Marca</th>
-              <th scope="col">Valor</th>
-              <th scope="col">Ação</th>
+        <thead class="bg-primary border-0">
+            <tr class="border-0">
+              <th class="border-0 text-white" scope="col">Nome</th>
+              <th class="border-0 text-white" scope="col">Marca</th>
+              <th class="border-0 text-white" scope="col">Valor</th>
+              <th class="border-0 text-white" scope="col">Ação</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>R$ 300,00</td>
-                <td>
+            <tr class="border-0">
+                <td class="border-0">Mark</td>
+                <td class="border-0">Otto</td>
+                <td class="border-0">R$ 300,00</td>
+                <td class="border-0">
                     <button class="btn btn-sm btn-warning">Editar</button>
                     <button class="btn btn-sm btn-danger">Excluir</button>
                 </td>
@@ -49,7 +49,7 @@
 <!-- Modal -->
 <div class="modal fade" id="cadastroManual" tabindex="-1" aria-labelledby="cadastroManualLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content border-0 bg-gray-1">
+    <div class="modal-content border-0">
       <div class="modal-header">
         <h5 class="modal-title" id="cadastroManualLabel">Cadastrar novo produto</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">

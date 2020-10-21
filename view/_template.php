@@ -18,35 +18,35 @@
     <script src="node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
     
 </head>
-<body class="bg-gray-1">
+<body class="">
     <!--- cabeçalho --->
-    <header class="header bg-dark">
+    <header class="header bg-gray-1">
         <div class="container-fluid d-flex">
-            <div class="text-white w-50">
+            <div class="text-primary w-50">
                 <span class="btn__bar">
                     <i class="fas fa-bars fa-lg "></i>
                 </span>
             </div>
-            <div class="text-white w-50 text-right">
+            <div class="text-primary w-50 text-right">
                 <span>SAIR </span> <i class="fas fa-sign-in-alt fa-lg ml-1"></i>
             </div>
         </div>
     </header>
     <!--- menu --->
-    <nav class="menu bg-gray-2 pt-2 pb-2">
+    <nav class="menu bg-primary-gr pt-2 pb-2">
         <figure class="d-flex justify-content-center align-items-center m-0 border-bottom pb-1">
             <img src="img/logo-afilos.png" width="50px">
         </figure>
         <div class="text-center mb-5 mt-5">
             <div>
-                <i class="fas fa-user-circle fa-3x text-gray-5"></i>
+                <i class="fas fa-user-circle fa-3x text-white"></i>
             </div>
-            <small class="text-gray-5">nome usuario</small>
+            <small class="text-white">nome usuario</small>
         </div>
         <div class="d-flex flex-column mb-5 align-items-center justify-content-center pl-3 pr-3">
-            <div class="p-1 text-center text-gray-5">
-                <a href="#" class="text-decoration-none text-gray-5">
-                    <div class="w-100 p-3 rounded bg-gray-1 text-center">
+            <div class="p-1 text-center text-white">
+                <a href="#" class="text-decoration-none text-white">
+                    <div class="w-100 p-3 rounded  text-center">
                         <i class="fas fa-home fa-lg"></i>
                     </div>
                     <small>dasboard</small>
@@ -55,8 +55,8 @@
         </div>
         <div class="d-flex flex-column mt-5 align-items-center justify-content-center pl-3 pr-3">
             <div class="p-1 text-center ">
-                <a href="<?= url('estoque') ?>" class="text-decoration-none text-gray-5">
-                    <div class="w-100 p-3 rounded bg-gray-1 text-center">
+                <a href="<?= url('estoque') ?>" class="text-decoration-none text-white">
+                    <div class="w-100 p-3 rounded  text-center">
                         <i class="fas fa-box-open fa-lg"></i>
                     </div>
                     <small>estoque</small>
@@ -64,9 +64,9 @@
             </div>
         </div>
         <div class="d-flex flex-column mt-5 align-items-center justify-content-center pl-3 pr-3">
-            <div class="p-1 text-center text-gray-5">
-                <a href="#" class="text-decoration-none text-gray-5">
-                    <div class="w-100 p-3 rounded bg-gray-1 text-center">
+            <div class="p-1 text-center text-white">
+                <a href="#" class="text-decoration-none text-white">
+                    <div class="w-100 p-3 rounded  text-center">
                     <i class="fas fa-dolly fa-lg"></i>
                     </div>
                     <small>entrada</small>
@@ -74,9 +74,9 @@
             </div>
         </div>
         <div class="d-flex flex-column mt-5 align-items-center justify-content-center pl-3 pr-3">
-            <div class="p-1 text-center text-gray-5">
-                <a href="#" class="text-decoration-none text-gray-5">
-                    <div class="w-100 p-3 rounded bg-gray-1 text-center">
+            <div class="p-1 text-center text-white">
+                <a href="#" class="text-decoration-none text-white">
+                    <div class="w-100 p-3 rounded  text-center">
                         <i class="fas fa-truck-loading fa-lg"></i>
                     </div>
                     <small>saída</small>
@@ -93,7 +93,7 @@
             else:
         ?>
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb rounded-0 pt-1 pb-1 bg-gray-1">
+            <ol class="breadcrumb rounded-0 pt-1 pb-1 bg-white">
                 <li class="breadcrumb-item active" aria-current="page">dashboard</li>
             </ol>
         </nav>
