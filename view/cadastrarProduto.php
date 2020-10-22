@@ -16,44 +16,71 @@
 <div class="row">
     <div class="col-md-6">
     <h1>Cadastrar Produto</h1>
-        <form id="cadastro__manual" method="post" action="<?= $router->route("produto.criar")?> " enctype="multipart/form-data">
-                <div class="form-group">
-                <label>Nome</label>
-                <input type="text" id="nome" name="nome" class="form-control" placeholder="Nome do produto">
-                </div>
-                <div class="form-group">
-                <label>Marca</label>
-                <input type="text" id="marca" name="marca" class="form-control" placeholder="Marca do produto">
-                </div>
-                <div class="form-group">
-                <label>Modelo</label>
-                <input type="text" id="modelo" name="modelo" class="form-control" placeholder="Modelo do produto">
-                </div>
-                <div class="form-group">
-                <label>Valor</label>
-                <input type="text" id="valor" name="valor" class="form-control" placeholder="Valor do produto">
-                <small class="text-gray-4">Não obrigatório</small>
-                </div>
-                <div class="form-group">
-                <label for="">Descrição</label>
-                <textarea name="descricao" class="form-control" rows="3"></textarea>
-                <small class="text-gray-4">Não obrigatório</small>
-                </div>
+    <div id="smartwizard">
+
+    <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#step-1">
+            Cadastrar foto
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#step-2">
+            Surgestão
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#step-3">
+            Informações do produto
+          </a>
+        </li>
+    </ul>
+
+    <form id="cadastro__manual" class="tab-content" method="post" action="<?= $router->route("produto.criar")?> " enctype="multipart/form-data">
+        <div id="step-1" class="tab-pane" role="tabpanel" aria-labelledby="step-1">
                 <div class="form-group" data-upload-id="myUniqueUploadId">
                     <label class="btn btn-lg btn-dark w-100 text-uppercase">
                         <b>Selecione uma foto</b> <i class="ml-2 fas fa-upload"></i>
-                        <input type="file" name="imagem" id="imagem" class="d-none" onchange="previewImagem(event)">
+                        <input type="file" name="imagem" id="imagem" class="d-none">
                     </label>
                 </div>
-                <div class="form-group">
+                <div class="col-md-6">
+                    <img id="output_image" style="width: 100%"/>
+                </div>
+        </div>
+        <div id="step-2" class="tab-pane" role="tabpanel" aria-labelledby="step-2">
+            
+        </div>
+        <div id="step-3" class="tab-pane" role="tabpanel" aria-labelledby="step-3">
+            <div class="form-group">
+                <label>Nome</label>
+                <input type="text" id="nome" name="nome" class="form-control" placeholder="Nome do produto">
+            </div>
+            <div class="form-group">
+                <label>Marca</label>
+                <input type="text" id="marca" name="marca" class="form-control" placeholder="Marca do produto">
+            </div>
+            <div class="form-group">
+                <label>Modelo</label>
+                <input type="text" id="modelo" name="modelo" class="form-control" placeholder="Modelo do produto">
+            </div>
+            <div class="form-group">
+                <label>Valor</label>
+                <input type="text" id="valor" name="valor" class="form-control" placeholder="Valor do produto">
+                <small class="text-gray-4">Não obrigatório</small>
+            </div>
+            <div class="form-group">
+                <label for="">Descrição</label>
+                <textarea name="descricao" class="form-control" rows="3"></textarea>
+                <small class="text-gray-4">Não obrigatório</small>
+            </div>
+            <div class="form-group">
                     <button class="btn btn-success" type="submit">Salvar</button>
                     <button type="button" class="btn btn-outline-secondary" id="cancelar" data-dismiss="modal">Cancelar</button>
                 </div>
-        </form>
-    </div>
-    <div class="col-md-6">
-        <img id="output_image" style="width: 100%"/>
-    </div>
+        </div>
+    </form>
+</div>
 </div>
 <?php $this->start("js"); ?>
   <script src="<?=url()?>/js/appProduto.js"></script>

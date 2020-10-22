@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="<?=url()?>/css/app.css">
     <link rel="stylesheet" href="<?=url()?>/css/all.min.css">
     <link rel="stylesheet" href="<?=url()?>/node_modules/@sweetalert2/theme-bootstrap-4/bootstrap-4.min.css">
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/smartwizard@5/dist/css/smart_wizard_all.min.css" rel="stylesheet" type="text/css" />
 
     <title>Afilos - <?= $title ?></title>
 
@@ -16,7 +18,8 @@
     <script src="<?=url()?>/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="<?=url()?>/lib/mask/jquery.mask.min.js"></script>
     <script src="<?=url()?>/node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/smartwizard@5/dist/js/jquery.smartWizard.min.js" type="text/javascript"></script>
+
 </head>
 <body class="">
     <!--- cabeçalho --->
