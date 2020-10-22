@@ -106,13 +106,18 @@ $('#imagem').change(function () {
                 "ocp-apim-subscription-key": "6fc56ac80c15406eaf88e6b42c503ee5",
                 "Content-Type": "application/octet-stream"
             },
+            timeout: 0,
             type: "POST",
             url: uriBase+"/?visualFeatures=Description,Tags&subscription-key=6fc56ac80c15406eaf88e6b42c503ee5&language=pt",
             processData: false,
             contentType: 'application/octet-stream',
             data: makeblob(fileReader.result),
-            success:function(data) {
-                console.log(data);
+            success: function (data) {
+                console.log(data.description.tags);
+                for (var i in data.description.tags) {
+                    var descricao = data.description.tags[i];
+                    $('#tipo_list').append(`<p>${descricao}<p>`)
+                }
             }
         });
     }

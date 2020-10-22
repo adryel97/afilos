@@ -49,11 +49,30 @@
                 </div>
         </div>
         <div id="step-2" class="tab-pane" role="tabpanel" aria-labelledby="step-2">
-            
+        <ul class="list-group">
+            <li class="list-group-item" >
+                Tipo do produto
+                <div id="tipo_list">
+                    
+                </div>
+            </li>
+            <li class="list-group-item" >
+                Marca
+                <div id="marca_list">
+
+                </div>
+            </li>
+            <li class="list-group-item">
+                Modelo
+                <div id="modelo_list">
+
+                </div>
+            </li>
+        </ul>
         </div>
         <div id="step-3" class="tab-pane" role="tabpanel" aria-labelledby="step-3">
             <div class="form-group">
-                <label>Nome</label>
+                <label>Tipo</label>
                 <input type="text" id="nome" name="nome" class="form-control" placeholder="Nome do produto">
             </div>
             <div class="form-group">
