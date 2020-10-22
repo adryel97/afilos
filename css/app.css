@@ -33,6 +33,7 @@
         height: 100%;
         transform: translateX(0);
         transition: 0.3s;
+        z-index: 2000;
     }
 
     .header{
@@ -45,6 +46,7 @@
         transition: 0.3s;
         top: 0;
         left: 0;
+        z-index: 1000;
     }
     .nav-bread{
         padding-top: 75px;
