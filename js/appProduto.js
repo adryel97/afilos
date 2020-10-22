@@ -98,8 +98,6 @@ $('#imagem').change(function () {
 
     fileReader.onloadend = function () {  
         $('#output_image').attr('src', fileReader.result)
-        //console.log(fileReader.result);
-
         var endpoint = "https://appafilos.cognitiveservices.azure.com/";
         var uriBase = endpoint + "vision/v3.1/analyze";
     
@@ -114,7 +112,7 @@ $('#imagem').change(function () {
             contentType: 'application/octet-stream',
             data: makeblob(fileReader.result),
             success:function(data) {
-                console.log(data)
+                console.log(data);
             }
         });
     }

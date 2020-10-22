@@ -26,7 +26,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#step-2">
-            Surgestão
+            Sugestão
           </a>
         </li>
         <li class="nav-item">
