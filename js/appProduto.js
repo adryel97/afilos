@@ -106,16 +106,44 @@ $('#imagem').change(function () {
                 "ocp-apim-subscription-key": "6fc56ac80c15406eaf88e6b42c503ee5",
                 "Content-Type": "application/octet-stream"
             },
-            timeout: 0,
             type: "POST",
             url: uriBase+"/?visualFeatures=Description,Tags&subscription-key=6fc56ac80c15406eaf88e6b42c503ee5&language=pt",
             processData: false,
             contentType: 'application/octet-stream',
             data: makeblob(fileReader.result),
             success: function (data) {
+                $('#tipo_list').html(`
+                <div class="form-group mt-2">
+                    <select class="form-control" id="select_tipo">
+                        <option>Selecione o tipo</option>
+                    </select>
+                </div>
+                `)
+                $('#marca_list').html(`
+                <div class="form-group mt-2">
+                    <select class="form-control" id="select_marca">
+                        <option>Selecione a marca</option>
+                    </select>
+                </div>
+                `)
+                $('#modelo_list').html(`
+                <div class="form-group mt-2">
+                    <select class="form-control" id="select_modelo">
+                        <option>Selecione o modelo</option>
+                    </select>
+                </div>
+                `)
                 for (var i in data.description.tags) {
                     var descricao = data.description.tags[i];
-                    $('#tipo_list').append(`<p>${descricao}<p>`)
+                    $('#select_tipo').append(`
+                        <option>${descricao}</option>
+                    `)
+                    $('#select_marca').append(`
+                        <option>${descricao}</option>
+                    `)
+                    $('#select_modelo').append(`
+                        <option>${descricao}</option>
+                    `)
                 }
             }
         });

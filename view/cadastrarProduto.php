@@ -49,6 +49,9 @@
                 </div>
         </div>
         <div id="step-2" class="tab-pane" role="tabpanel" aria-labelledby="step-2">
+        <p>
+            <small class="text-gray-4">Não é obrigatório selecionar, caso seja manual clique em próximo</small>
+        </p>
         <ul class="list-group">
             <li class="list-group-item" >
                 Tipo do produto
