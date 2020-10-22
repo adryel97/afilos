@@ -113,7 +113,6 @@ $('#imagem').change(function () {
             contentType: 'application/octet-stream',
             data: makeblob(fileReader.result),
             success: function (data) {
-                console.log(data.description.tags);
                 for (var i in data.description.tags) {
                     var descricao = data.description.tags[i];
                     $('#tipo_list').append(`<p>${descricao}<p>`)
