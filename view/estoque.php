@@ -15,13 +15,10 @@
 <h1>Estoque</h1>
 <p class="text-gray-4 mb-2 mt-4"><b>cadastre um novo produto:</b></p>
 <div class="d-flex">
-    <button class="btn btn-azul-primary text-uppercase">
-        <b>cadastro com assitente</b>
-    </button>
-    <button class="btn btn-outline-secondary  text-uppercase ml-2" data-toggle="modal" data-target="#cadastroManual">
-        <b>cadastro manual</b>
-    </button>
-</div>
+    <a class="btn btn-azul-primary text-uppercase" href="<?= $router->route("produto.cadastrar")?>">
+          <b>cadastro produto</b>
+    </a>
+</div>  
 <div>
     <table class="table mt-5 rounded">
         <thead class="bg-primary border-0">
@@ -96,6 +93,3 @@
     </div>
   </div>
 </div>
-<?php $this->start("js"); ?>
-  <script src="<?=url()?>/js/appProduto.js"></script>
-<?php $this->end() ?>

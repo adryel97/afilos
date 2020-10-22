@@ -10,6 +10,7 @@ $router->namespace("App\Controller");
 
 $router->group("");
 $router->get('/estoque', 'Produto:estoque', 'produto.estoque');
+$router->get('/estoque/cadastrar', 'Produto:cadastrarProduto', 'produto.cadastrar');
 $router->post('/estoque/criar', 'Produto:criarProduto', 'produto.criar');
 
 //inicializa as rotas

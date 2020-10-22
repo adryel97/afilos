@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="node_modules/@sweetalert2/theme-bootstrap-4/bootstrap-4.min.css">
+    <link rel="stylesheet" href="<?=url()?>/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?=url()?>/css/app.css">
+    <link rel="stylesheet" href="<?=url()?>/css/all.min.css">
+    <link rel="stylesheet" href="<?=url()?>/node_modules/@sweetalert2/theme-bootstrap-4/bootstrap-4.min.css">
 
     <title>Afilos - <?= $title ?></title>
 
-    <script src="lib/jquery/jquery-3.5.1.min.js"></script>
-    <script src="lib/popper/popper.min.js"></script>
-    <script src="js/all.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="lib/mask/jquery.mask.min.js"></script>
-    <script src="node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script src="<?=url()?>/lib/jquery/jquery-3.5.1.min.js"></script>
+    <script src="<?=url()?>/lib/popper/popper.min.js"></script>
+    <script src="<?=url()?>/js/all.min.js"></script>
+    <script src="<?=url()?>/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="<?=url()?>/lib/mask/jquery.mask.min.js"></script>
+    <script src="<?=url()?>/node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
     
 </head>
 <body class="">
@@ -35,7 +35,7 @@
     <!--- menu --->
     <nav class="menu bg-primary-gr pt-2 pb-2">
         <figure class="d-flex justify-content-center align-items-center m-0 border-bottom border-white pb-1">
-            <img src="img/logoA-branco.png" width="60px" style="opacity: 0.5;">
+            <img src="<?=url()?>/img/logoA-branco.png" width="60px" style="opacity: 0.5;">
         </figure>
         <div class="text-center mb-5 mt-5">
             <div>
@@ -109,8 +109,8 @@
             <?= $this->section("content");?>
         </div>
     </main>
-    <script src="js/appMenu.js"></script>
-    <script src="js/config.js"></script>
+    <script src="<?=url()?>/js/appMenu.js"></script>
+    <script src="<?=url()?>/js/config.js"></script>
     <?= $this->section("js");?>
 </body>
 </html>

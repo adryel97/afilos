@@ -12,12 +12,6 @@ function cadastrarProduto(url, formData, inputs, modalCadastro, fileClean)
         processData: false,
         contentType: false,
         success: function (callback) {
-
-            var datProduto = JSON.parse(callback);
-            if (datProduto.produto) {
-                tbl.prepend(datProduto.produto);
-            }
-
             if(callback == 0){
                 Swal.fire({
                     icon: 'error',
@@ -78,3 +72,7 @@ $('#cancelar').click(function ()
     fileClean.val('');
     inputsClean.val('');
 });
+
+window.onload = function (){
+    console.log('ola');
+};

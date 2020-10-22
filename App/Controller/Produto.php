@@ -34,6 +34,11 @@ class Produto
         ]);
     }
 
+    public function cadastrarProduto()
+    {
+        echo $this->view->render('cadastrarProduto');
+    }
+
     public function criarProduto()
     {
         $nome      = $_POST['nome'];
@@ -43,31 +48,15 @@ class Produto
         $descricao = $_POST['descricao'];
 
         $files = $_FILES;
-
         
         if(!empty($files['imagem'])){
             $file = $files['imagem'];
-
             if(empty($file['type'])){
                 echo 0;
             } else{
                 $caminhoImagem = $this->uploadProduto->uploadImagem($file);
                 $this->produto->insertProduto($nome, ConfigFormatos::formataMoeda($valor), $modelo, $marca, $descricao, $caminhoImagem);
-                
-                $produto = [
-                        "nome_produto"      => $nome,
-                        "valor_produto"     => $valor,
-                        "marca_produto"     => $marca,
-                        "modelo_produto"    => $modelo,
-                        "descricao_produto" => $descricao
-                ];
-
-                $objProduto = json_decode (json_encode ($produto), FALSE);
-                $callback['produto'] = $this->view->render("fragmento/fragEstoque", [
-                    "produto" => $objProduto
-                ]);
-                    
-                echo json_encode($callback);
+                echo 1;
             }
         }
     }
