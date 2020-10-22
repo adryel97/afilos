@@ -136,15 +136,36 @@ $('#imagem').change(function () {
                 for (var i in data.description.tags) {
                     var descricao = data.description.tags[i];
                     $('#select_tipo').append(`
-                        <option>${descricao}</option>
+                        <option value="${descricao}">${descricao}</option>
                     `)
                     $('#select_marca').append(`
-                        <option>${descricao}</option>
+                        <option value="${descricao}">${descricao}</option>
                     `)
                     $('#select_modelo').append(`
-                        <option>${descricao}</option>
+                        <option value="${descricao}">${descricao}</option>
                     `)
                 }
+
+                $('#select_marca').change(function () { 
+                    const marcaVal = $(this).val();
+                    $('#marca').val(marcaVal);
+                });
+
+                $('#select_tipo').change(function () { 
+                    const tipoVal = $(this).val();
+                    $('#nome').val(tipoVal);
+                });
+
+                $('#select_modelo').change(function () { 
+                    const modeloVal = $(this).val();
+                    $('#modelo').val(modeloVal);
+                });
+
+                $('#cancelar').click(function () { 
+                    $('#modelo_list div').empty();
+                    $('#marca_list div').empty();
+                    $('#tipo_list div').empty();
+                });
             }
         });
     }
@@ -161,6 +182,7 @@ $('#cancelar').click(function ()
     srcClean.attr('src', '');
     fileClean.val('');
     inputsClean.val('');
+    
 });
 
 
