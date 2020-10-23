@@ -12,6 +12,18 @@ $(document).ready(function () {
             previous: 'Voltar'
         }
     });
+
+    $('#tbl_produto').DataTable({
+        "language": {
+            "url": "https://cdn.datatables.net/plug-ins/1.10.21/i18n/Portuguese.json"
+        },
+        "bFilter": true,
+        "filter": true,
+        "ordering": false,
+        "displayStart": 20,
+        "lengthChange": false,
+        "dom": '<lf<t>ip>'
+    });
 });
 
 //cadastra o produto

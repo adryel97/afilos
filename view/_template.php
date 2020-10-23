@@ -19,6 +19,8 @@
     <script src="<?=url()?>/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="<?=url()?>/lib/mask/jquery.mask.min.js"></script>
     <script src="<?=url()?>/node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script src="<?=url()?>/lib/datatables/jquery.dataTables.min.js"></script>
+    <script src="<?=url()?>/lib/datatables/dataTables.bootstrap4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/smartwizard@5/dist/js/jquery.smartWizard.min.js" type="text/javascript"></script>
 
 </head>

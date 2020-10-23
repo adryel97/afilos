@@ -13,13 +13,13 @@
 ?>  
 <h1>Estoque</h1>
 <p class="text-gray-4 mb-2 mt-4"><b>cadastre um novo produto:</b></p>
-<div class="d-flex">
+<div class="d-flex mb-5">
     <a class="btn btn-azul-primary text-uppercase" href="<?= $router->route("produto.cadastrar")?>">
           <b>cadastro produto</b>
     </a>
 </div>  
 <div>
-    <table class="table mt-5 rounded">
+    <table id="tbl_produto" class="table rounded">
         <thead class="bg-primary border-0">
             <tr class="border-0">
               <th class="border-0 text-white" scope="col">Nome</th>
