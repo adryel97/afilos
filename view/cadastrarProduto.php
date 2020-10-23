@@ -36,7 +36,7 @@
         </li>
     </ul>
 
-    <form id="cadastro__manual" class="tab-content" method="post" action="<?= $router->route("produto.criar")?> " enctype="multipart/form-data">
+    <form id="cadastro" class="tab-content" method="post" action="<?= $router->route("produto.criar")?> " enctype="multipart/form-data">
         <div id="step-1" class="tab-pane" role="tabpanel" aria-labelledby="step-1">
                 <div class="form-group" data-upload-id="myUniqueUploadId">
                     <label class="btn btn-lg btn-dark w-100 text-uppercase">
@@ -97,7 +97,7 @@
                 <small class="text-gray-4">Não obrigatório</small>
             </div>
             <div class="form-group">
-                    <button class="btn btn-success" type="submit">Salvar</button>
+                    <button class="btn btn-success salvar__btn" type="submit">Salvar</button>
                     <button type="button" class="btn btn-outline-secondary" id="cancelar" data-dismiss="modal">Cancelar</button>
                 </div>
         </div>

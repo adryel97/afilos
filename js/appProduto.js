@@ -1,29 +1,24 @@
 $(document).ready(function () {
     $('#smartwizard').smartWizard({
-        selected: 0, // Initial selected step, 0 = first step
+        selected: 0, 
         theme: 'dots',
         autoAdjustHeight : false , // Ajustar automaticamente a altura do conteúdo  
         cycleSteps : false , // Permite percorrer a navegação das etapas  
         backButtonSupport : true , // Habilita o suporte do botão Voltar  
         enableURLhash: true, // Habilita a seleção da etapa com base no hash de url  
-        enableAnchorOnDoneStep : true, // Habilita / desabilita a navegação das etapas concluídas
+        enableAnchorOnDoneStep : false, // Habilita/desabilita a navegação das etapas concluídas
         lang: { // Language variables for button
             next: 'Próximo',
             previous: 'Voltar'
-        },
-        transition: {
-            animation: 'fade', // Effect on navigation, none/fade/slide-horizontal/slide-vertical/slide-swing
-            speed: '400', // Transion animation speed
-            easing:'' // Transition animation easing. Not supported without a jQuery easing plugin
         }
     });
 });
+
 //cadastra o produto
-function cadastrarProduto(url, formData, inputs, modalCadastro, fileClean)
+function cadastrarProduto(url, formData, inputs, fileClean)
 {
     var srcClean = $('#output_image');
     var fileClean = $('#imagem');
-    var tbl = $('#load__tbl'); 
 
     $.ajax({
         type: "POST",
@@ -31,7 +26,16 @@ function cadastrarProduto(url, formData, inputs, modalCadastro, fileClean)
         data: formData,
         processData: false,
         contentType: false,
-        success: function (callback) {
+        beforeSend: function ()
+        {
+            $('.salvar__btn').addClass('disabled');
+            $('.salvar__btn').html('<i class="fas fa-circle-notch fa-spin"></i> Criando Produto...')
+        },
+        success: function (callback)
+        {
+            $('.salvar__btn').removeClass('disabled');
+            $('.salvar__btn').html('Salvar')
+
             if(callback == 0){
                 Swal.fire({
                     icon: 'error',
@@ -39,24 +43,49 @@ function cadastrarProduto(url, formData, inputs, modalCadastro, fileClean)
                     html: '<p class="mb-1">Preencha os campos corretamente.</p> <p>Verifique se a imagem é formato <b>PNG, JPG, GIF, JPEG<b><p>'
                 })
             } else {
-                modalCadastro.modal('hide');
                 Swal.fire({
                     icon: 'success',
                     title: 'Produto cadastrado com sucesso'
                 })
                 srcClean.attr('src', '');
                 fileClean.val('');
+                inputs.val('');
             }
+        }
+    });
+}
+//excluir produto
+function excluirProduto(url, id)
+{
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {"id": id},
+        dataType: "json",
+        beforeSend: function ()
+        {
+            $('.excluir__produto--btn').addClass('disabled')
+            $('.excluir__produto--btn').html('<i class="fas fa-circle-notch fa-spin"></i> Excluindo...')
         },
-        complete: function () {
-            inputs.val('');
-            fileClean.val('');
+        success: function (data)
+        {
+            $('#linha-produto-' + id).fadeOut();
+            $('#excluirProdutoModal').modal('hide');
+        },
+        complete: function ()
+        {
+            $('.excluir__produto--btn').html('Excluir')
+            $('.excluir__produto--btn').removeClass('disabled')
+            Swal.fire({
+                icon: 'success',
+                title: 'Produto excluido com sucesso'
+            })
         }
     });
 }
 
-//ao clicar no cadastro manual
-$('#cadastro__manual').submit(function (e)
+//envia as informações para o cadastro
+$('#cadastro').submit(function (e)
 { 
     e.preventDefault();
     var formulario = $(this);
@@ -64,10 +93,24 @@ $('#cadastro__manual').submit(function (e)
     var formData = new FormData(form);
     var url = formulario.attr('action');
     var inputs = $('.form-control');
-    var modalCadastro = $('#cadastroManual');
     var fileClean = $('#imagem');
-    cadastrarProduto(url, formData, inputs, modalCadastro, fileClean);
+    cadastrarProduto(url, formData, inputs, fileClean);
 });
+
+$(".excluir").click(function () { 
+    var id = $(this).attr('data-excluir');
+    var url = $(this).attr('data-url');
+    var produtoNome = $(this).attr('data-produto');
+    
+    $('#excluirProdutoLabel').html(produtoNome);
+    $('.modal-body').html(`Você realmente deseja excluir esse produto: <b>${produtoNome}</b>`)
+
+    $('#excluirProduto').click(function () { 
+        excluirProduto(url, id);
+    });
+});
+
+
 
 makeblob = function (dataURL) {
     var BASE64_MARKER = ';base64,';
@@ -91,7 +134,7 @@ makeblob = function (dataURL) {
     return new Blob([uInt8Array], { type: contentType });
 }
 
-//preview da imagem
+//preview da imagem e conexao com a API
 $('#imagem').change(function () { 
     const file = $(this)[0].files[0];
     const fileReader = new FileReader()
@@ -111,7 +154,8 @@ $('#imagem').change(function () {
             processData: false,
             contentType: 'application/octet-stream',
             data: makeblob(fileReader.result),
-            success: function (data) {
+            success: function (data)
+            {
                 $('#tipo_list').html(`
                 <div class="form-group mt-2">
                     <select class="form-control" id="select_tipo">
@@ -173,7 +217,7 @@ $('#imagem').change(function () {
     fileReader.readAsDataURL(file)
 });
 
-//ao clicar em cancelar limpa todoas as informações
+//ao clicar em cancelar limpa todas as informações
 $('#cancelar').click(function ()
 { 
     var srcClean = $('#output_image');

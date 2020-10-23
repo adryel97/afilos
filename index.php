@@ -8,10 +8,11 @@ $router = new Router(ROOT);
 $router->namespace("App\Controller");
 //rotas aqui
 
-$router->group("");
-$router->get('/estoque', 'Produto:estoque', 'produto.estoque');
-$router->get('/estoque/cadastrar', 'Produto:cadastrarProduto', 'produto.cadastrar');
-$router->post('/estoque/criar', 'Produto:criarProduto', 'produto.criar');
+$router->group("estoque");
+$router->get('/', 'Produto:estoque', 'produto.estoque');
+$router->get('/cadastrar', 'Produto:cadastrarProduto', 'produto.cadastrar');
+$router->post('/criar', 'Produto:criarProduto', 'produto.criar');
+$router->post('/excluir', 'Produto:excluirProduto', 'produto.excluir');
 
 //inicializa as rotas
 $router->dispatch();

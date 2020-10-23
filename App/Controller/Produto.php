@@ -60,4 +60,15 @@ class Produto
             }
         }
     }
+
+    public function excluirProduto(array $data): void
+    {
+        $produto = $this->produto;
+        $id = filter_var($data['id'], FILTER_VALIDATE_INT);
+
+        if($produto){
+            $produto->findById($id)->destroy();
+        }
+        echo json_encode($id);
+    }
 }
