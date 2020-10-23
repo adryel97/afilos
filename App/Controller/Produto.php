@@ -81,10 +81,56 @@ class Produto
         $foto = $this->foto->findById($idProduto);
         $produto = $this->produto->findById($idProduto);
 
-
         echo $this->view->render('editarProduto', [
             "produto" => $produto,
             "foto" => $foto
         ]);
+    }
+
+    public function editarProduto()
+    {
+        $nome      = $_POST['nome'];
+        $valor     = $_POST['valor'];
+        $marca     = $_POST['marca'];
+        $modelo    = $_POST['modelo'];
+        $descricao = $_POST['descricao'];
+
+        $idProduto = $_POST['id'];
+
+        $files = $_FILES;
+        
+        if(!empty($files['imagem'])){
+            $file = $files['imagem'];
+            if(empty($file['type'])){
+                $produto = $this->produto->findById($idProduto);
+                $produto->nome_produto = $nome;
+                $produto->valor_produto = ConfigFormatos::formataMoeda($valor);
+                $produto->modelo_produto = $modelo;
+                $produto->marca_produto = $marca;
+                $produto->descricao_produto = $descricao;
+
+                $produto->save;
+
+                echo 0;
+            } else{
+                $produto = $this->produto->findById($idProduto);
+                $produto->nome_produto = $nome;
+                $produto->valor_produto = ConfigFormatos::formataMoeda($valor);
+                $produto->modelo_produto = $modelo;
+                $produto->marca_produto = $marca;
+                $produto->descricao_produto = $descricao;
+
+                $produto->save;
+
+                
+                $caminhoImagem = $this->uploadProduto->uploadImagem($file);
+                $foto = $this->foto->findById($idProduto);
+                $foto->nome_foto = $caminhoImagem;
+
+                $foto->save;
+
+                echo 1;
+            }
+        }    
     }
 }

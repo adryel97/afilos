@@ -14,6 +14,7 @@ $router->get('/cadastrar', 'Produto:cadastrarProduto', 'produto.cadastrar');
 $router->post('/criar', 'Produto:criarProduto', 'produto.criar');
 $router->post('/excluir', 'Produto:excluirProduto', 'produto.excluir');
 $router->get('/mostrar/{id}', 'Produto:mostrarProduto', 'produto.mostrar');
+$router->post('/editar', 'Produto:editarProduto', 'produto.editar');
 
 
 //inicializa as rotas
