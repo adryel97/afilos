@@ -4,7 +4,7 @@ namespace App\Model;
 
 use CoffeeCode\DataLayer\Connect;
 use CoffeeCode\DataLayer\DataLayer;
-
+use PDO;
 
 class FotoProdutoModel extends DataLayer
 {
@@ -27,4 +27,5 @@ class FotoProdutoModel extends DataLayer
         $con->bindValue(2, $fkProduto);
         $con->execute();
     }
+
 }

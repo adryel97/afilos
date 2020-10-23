@@ -99,7 +99,7 @@
             <div class="form-group">
                     <button class="btn btn-success salvar__btn" type="submit">Salvar</button>
                     <button type="button" class="btn btn-outline-secondary" id="cancelar" data-dismiss="modal">Cancelar</button>
-                </div>
+            </div>
         </div>
     </form>
 </div>

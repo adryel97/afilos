@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Model\ProdutoModel;
 use League\Plates\Engine;
 use App\Controller\UploadProduto;
+use App\Model\FotoProdutoModel;
 
 class Produto 
 {
@@ -22,6 +23,7 @@ class Produto
 
         $this->produto = new ProdutoModel();
         $this->uploadProduto = new UploadProduto();
+        $this->foto = new FotoProdutoModel();
        
         $this->router = $router;
     }
@@ -70,5 +72,19 @@ class Produto
             $produto->findById($id)->destroy();
         }
         echo json_encode($id);
+    }
+
+    public function mostrarProduto(array $id)
+    {
+        $idProduto = filter_var($id['id'], FILTER_VALIDATE_INT);
+
+        $foto = $this->foto->findById($idProduto);
+        $produto = $this->produto->findById($idProduto);
+
+
+        echo $this->view->render('editarProduto', [
+            "produto" => $produto,
+            "foto" => $foto
+        ]);
     }
 }

@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use Cocur\Slugify\Slugify;
+
 class ConfigFormatos
 {
     static function formataMoeda(string $str): String
@@ -15,6 +17,14 @@ class ConfigFormatos
     static function formataMoedaRetorno($str): String
     {
         $str = number_format($str, 2, ",", ".");
+        return $str;
+    }
+
+    static function slugi($str)
+    {
+        $slugify = new Slugify();
+        $slugify->slugify($str);
+
         return $str;
     }
 }

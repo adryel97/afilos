@@ -13,6 +13,8 @@ $router->get('/', 'Produto:estoque', 'produto.estoque');
 $router->get('/cadastrar', 'Produto:cadastrarProduto', 'produto.cadastrar');
 $router->post('/criar', 'Produto:criarProduto', 'produto.criar');
 $router->post('/excluir', 'Produto:excluirProduto', 'produto.excluir');
+$router->get('/mostrar/{id}', 'Produto:mostrarProduto', 'produto.mostrar');
+
 
 //inicializa as rotas
 $router->dispatch();
