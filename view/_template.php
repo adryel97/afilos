@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="<?=url()?>/img/icone.png">
     <link rel="stylesheet" href="<?=url()?>/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?=url()?>/css/app.css">
     <link rel="stylesheet" href="<?=url()?>/css/all.min.css">
