@@ -6,10 +6,11 @@ use CoffeeCode\DataLayer\Connect;
 use CoffeeCode\DataLayer\DataLayer;
 use PDO;
 
+
 class FotoProdutoModel extends DataLayer
 {
     /**
-     * ProdutoModel constructor.
+     * FotoProdutoModel constructor.
      */
     public function __construct()
     {
@@ -17,6 +18,11 @@ class FotoProdutoModel extends DataLayer
         parent::__construct("tbl_foto_produto", ["nome_foto"], "id_foto", false);
     } 
 
+    /**
+     * @param mixed $nomeFoto 
+     * @param mixed $fkProduto
+     * @return void
+     */
     public function insertImagem($nomeFoto, $fkProduto)
     {
         $sql = "INSERT INTO tbl_foto_produto (nome_foto, fk_produto) VALUES (?, ?)";

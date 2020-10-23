@@ -7,6 +7,7 @@ use CoffeeCode\DataLayer\DataLayer;
 use CoffeeCode\DataLayer\Connect;
 use App\Model\FotoProdutoModel;
 
+
 class ProdutoModel extends DataLayer
 {
      /**
@@ -18,6 +19,15 @@ class ProdutoModel extends DataLayer
         parent::__construct("tbl_produto", ["nome_produto", "modelo_produto"], "id_produto", false);
     }    
 
+    /**
+     * @param mixed $nome 
+     * @param mixed $valor
+     * @param mixed $modelo
+     * @param mixed $marc
+     * @param mixed $descrica
+     * @param mixed $nomeFot
+     * @return void
+     */
     public function insertProduto($nome, $valor, $modelo, $marca, $descricao, $nomeFoto)
     {
         $sql = "INSERT INTO tbl_produto (nome_produto, valor_produto, modelo_produto, marca_produto, descricao_produto) VALUES (?, ?, ?, ?, ?)";

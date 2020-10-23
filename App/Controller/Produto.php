@@ -2,10 +2,12 @@
 
 namespace App\Controller;
 
+
 use App\Model\ProdutoModel;
 use League\Plates\Engine;
 use App\Controller\UploadProduto;
 use App\Model\FotoProdutoModel;
+
 
 class Produto 
 {
@@ -28,6 +30,9 @@ class Produto
         $this->router = $router;
     }
 
+    /**
+     * @return view
+     */
     public function estoque()
     {
         $produtos = $this->produto->find()->fetch(true);
@@ -36,11 +41,17 @@ class Produto
         ]);
     }
 
+    /**
+     * @return view
+     */
     public function cadastrarProduto()
     {
         echo $this->view->render('cadastrarProduto');
     }
 
+    /**
+     * @return void
+     */
     public function criarProduto()
     {
         $nome      = $_POST['nome'];
@@ -63,6 +74,10 @@ class Produto
         }
     }
 
+    /**
+     * @param array $data
+     * @return void
+     */
     public function excluirProduto(array $data): void
     {
         $produto = $this->produto;
@@ -74,6 +89,10 @@ class Produto
         echo json_encode($id);
     }
 
+    /**
+     * @param array $id
+     * @return view
+     */
     public function mostrarProduto(array $id)
     {
         $idProduto = filter_var($id['id'], FILTER_VALIDATE_INT);
@@ -87,7 +106,10 @@ class Produto
         ]);
     }
 
-    public function editarProduto()
+    /**
+     * @return void
+     */
+    public function editarProduto(): void
     {
         $nome      = $_POST['nome'];
         $valor     = $_POST['valor'];
