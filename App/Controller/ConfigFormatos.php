@@ -42,11 +42,19 @@ class ConfigFormatos
         return $str;
     }
 
+    /**
+     * @param mixed $str
+     * @return string|false
+     */
     static function dataFormato($str)
     {
         return date("d/m/Y", strtotime($str));
     }
 
+    /**
+     * @param mixed $str
+     * @return string|false
+     */
     static function horaFormato($str)
     {
         return date("H:i", strtotime($str));
