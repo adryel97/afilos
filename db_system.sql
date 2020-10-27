@@ -30,6 +30,8 @@ CREATE TABLE `tbl_produto` (
   `valor_produto` decimal(10,2) NOT NULL,
   `modelo_produto` varchar(100) NOT NULL,
   `marca_produto` varchar(100) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `descricao_produto` mediumtext NOT NULL,
   PRIMARY KEY (`id_produto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

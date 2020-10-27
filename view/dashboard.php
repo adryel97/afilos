@@ -27,6 +27,7 @@ $this->layout("_template", ['title' => 'Dashboard']);
         </div>
             <ul class="list-group border-0">
             <?php 
+                if($produtos):
                     foreach ( $produtos as $p):
                 ?>
                 <li class="border-0 list-group-item d-flex justify-content-between align-items-center">
@@ -35,6 +36,7 @@ $this->layout("_template", ['title' => 'Dashboard']);
                 </li>
                 <?php
                     endforeach;
+                endif;
                 ?>
             </ul>
         </div>
