@@ -52,11 +52,11 @@
         <div style="height: 55vh; overflow-y: scroll;" id="scroll--menu">
             <div class="d-flex flex-column mb-5 align-items-center justify-content-center pl-3 pr-3">
                 <div class="p-1 text-center text-white">
-                    <a href="#" class="text-decoration-none text-white">
+                    <a href="<?= url('dashboard') ?>" class="text-decoration-none text-white">
                         <div class="w-100 p-3 rounded  text-center">
                             <i class="fas fa-home fa-lg"></i>
                         </div>
-                        <small>dasboard</small>
+                        <small>dashboard</small>
                     </a>
                 </div>
             </div>

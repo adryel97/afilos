@@ -4,7 +4,7 @@ namespace App\Controller;
 
 
 use Cocur\Slugify\Slugify;
-
+use DateTime;
 
 class ConfigFormatos
 {
@@ -40,5 +40,15 @@ class ConfigFormatos
         $slugify->slugify($str);
 
         return $str;
+    }
+
+    static function dataFormato($str)
+    {
+        return date("d/m/Y", strtotime($str));
+    }
+
+    static function horaFormato($str)
+    {
+        return date("H:i", strtotime($str));
     }
 }
