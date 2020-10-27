@@ -30,7 +30,7 @@ class Dashboard
         echo $this->view->render('dashboard', [
             "produtos" => $produtos,
             "quantidade" => $produtosQuant
-            ]);
+        ]);
     }
 
     public function recentesCadastrados()
